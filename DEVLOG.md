@@ -12,7 +12,7 @@ So first I will try to implement the Dijkstra's algoirthm since it is kind of wh
 
 ---
 
-## Entry 2 – 5/6/2026: [Short description]
+## Entry 2 – 5/6/2026:
 
 I forgot to skip unreachable paths with infinity.
 

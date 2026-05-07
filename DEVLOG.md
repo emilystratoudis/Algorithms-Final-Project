@@ -18,11 +18,6 @@ I forgot to skip unreachable paths with infinity.
 
 ---
 
-## Entry 3 – [Date]: [Short description]
-
-_Your entry here._
-
----
 
 ## Entry 4 – [Date]: Post-Implementation Reflection
 

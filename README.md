@@ -15,7 +15,7 @@
   After all the inter location costs are known we just need to knwo th ebest order to visit them in before we reach the end of our path. 
 
 - **Why this requires a search over orders (one sentence):**
-  We need to search over many orders because different orders all have diffferent costs and just choosing the shortest path order sometimes will not give us the least cost so we have to try out different ones. 
+  We need to search over many orders because different orders all have diffferent costs and just choosing the shortest path order sometimes will not give us the least total cost so we have to try out different ones. 
 
 ---
 

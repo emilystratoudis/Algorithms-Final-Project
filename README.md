@@ -50,38 +50,28 @@
 
 ## Part 3: Algorithm Correctness
 
-> Document your understanding of why Dijkstra produces correct distances.
-> Bullet points and short sentences throughout. No paragraphs.
-
 ### Part 3a: What the Invariant Means
 
-> Two bullets: one for finalized nodes, one for non-finalized nodes.
-> Do not copy the invariant text from the spec.
-
 - **For nodes already finalized (in S):**
-  _Your answer here._
+  At the start of each iteration of the loop every finalized node actaully has the shortest path distance from the source.
 
 - **For nodes not yet finalized (not in S):**
-  _Your answer here._
+  At the start of each iteration of the loop every non finalized node stores the minumum distamce that we know so far based on the nodes that already have been finalized.  
 
 ### Part 3b: Why Each Phase Holds
 
-> One to two bullets per phase. Maintenance must mention nonnegative edge weights.
-
 - **Initialization : why the invariant holds before iteration 1:**
-  _Your answer here._
+  Before the first loop iteration, distance[source] = 0 and every other disatnce is infinity. This proves the invariant since the source has a path that has zero cost itself and no other paths have been discovered yet so it is the shortest ath distance from source at that moment. 
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  _Your answer here._
+  Assuming the invariant holds at the strat of the loop and the queue chooses the unfinalized node with the smallest distance. When that node then gets finialized, nonnegative edge weights would guarentee that any path after through another unfinalized node only can add cost the the finalized disatnce can't become smaller. And relaxing the outgoing edges update the best discovered path for all other non finalized edges so the invariant P still hold true. 
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _Your answer here._
+  When the loop terminates there are no more nodes left to improve. It uses the invariant at exit and every finalized node has its true shortest path disatnce from the source and any unreachable nodes stay infinite. 
 
 ### Part 3c: Why This Matters for the Route Planner
 
-> One sentence connecting correct distances to correct routing decisions.
-
-_Your answer here._
+We need the correct distance from each path becuase that is what the planner uses to plan the final lowest cost route so if they are wrong the whole route could be incorrect. 
 
 ---
 

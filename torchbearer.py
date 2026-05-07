@@ -2,8 +2,8 @@
 CS 460 – Algorithms: Final Programming Assignment
 The Torchbearer
 
-Student Name: ___________________________
-Student ID:   ___________________________
+Student Name: Emily Stratoudis
+Student ID:   828413515
 
 INSTRUCTIONS
 ------------
@@ -25,16 +25,12 @@ import heapq
 # =============================================================================
 
 def explain_problem():
-    """
-    Returns
-    -------
-    str
-        Your Part 1 README answers, written as a string.
-        Must match what you wrote in README Part 1.
+    return """
+- A single shortest path run from S is not enough because that only tells us the cheapest distance from each location to S but for this problem we need the shortest path in the best order of all the relics and that we can not find from just doing the single run from S to each part.
+- After all the inter location costs are known we just need to know the best order to visit them in before we reach the end of our path.
+- We need to search over many orders because different orders all have diffferent costs and just choosing the shortest path order sometimes will not give us the least total cost so we have to try out different ones.
 
-    TODO
-    """
-    return "TODO"
+"""
 
 
 # =============================================================================

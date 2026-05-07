@@ -113,16 +113,16 @@ def dijkstra_invariant_check():
 # =============================================================================
 
 def explain_search():
-    """
-    Returns
-    -------
-    str
-        Your Part 4 README answers, written as a string.
-        Must match what you wrote in README Part 4.
+    
+    return """
+-The failure mode: The greedy could choose the closest next relic with least cost but does not consider the entire global cost and the effect that local choice has on that and the rest of the route.
+-Counter-example setup: S to A costs 1 and S to B costs 2 and A to B costs 100 and B to A costs 1 and A to T costs 1 and B to T costs 1.
+-What greedy picks: Choose A first because it is shortest path from S.
+-What optimal picks: Chooses B first then A and then T.
+-Why greedy loses: Greedy looses since it has the path S -> A -> B -> T which has a cost of 102. But optimal chooses S -> B -> A -> T which only has a cost of 4.
+-The algorithm hast to explore all different relic visit orders since the total cost depends on order of how you visit them.
 
-    TODO
-    """
-    return "TODO"
+"""
 
 
 # =============================================================================

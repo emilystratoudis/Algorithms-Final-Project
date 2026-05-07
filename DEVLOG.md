@@ -8,7 +8,7 @@
 ## Entry 1 – 5/6/2026: Initial Plan
 
 
-So first I will try to implement the Dijkstra's algoirthm since it is kind of what the whole project builds off on. After I have that implemeted I will try to make the distance table so I can write the recusive search ovver the orders in from the table. I think thte hardest part will be stopping to explore a path if its too expesnive wihtout missing actual valid values that will give us the best route. I will test my results with the test given and I solved the problem myself on the side so I will use that to see if I am getting correct results.
+So first I will try to implement the Dijkstra's algoirthm since it is kind of what the whole project builds off on. After I have that implemeted I will try to make the distance table so I can write the recusive search over the orders in from the table. I think the hardest part will be stopping to explore a path if its too expensive without missing actual valid values that will give me the best route. I will test my results with the test given and I solved the problem myself on the side too so I will also use that to see if I am getting correct results.
 
 ---
 

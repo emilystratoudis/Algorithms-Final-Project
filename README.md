@@ -96,33 +96,26 @@ The algorithm hast to explore all different relic visit orders since the total c
 
 ### Part 5a: State Representation
 
-> Document the three components of your search state as a table.
-> Variable names here must match exactly what you use in torchbearer.py.
-
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
-| Current location | | | |
-| Relics already collected | | | |
-| Fuel cost so far | | | |
+| Current location |current_loc|node|It is the node where the current route found is stored|
+| Relics already collected |relics_visited_order|list|it is the relics that have been visited already and they are stored in the order that they were chosen|
+| Fuel cost so far |cost_so_far|int|it is the total fuel cost that is used by the current route found|
 
 ### Part 5b: Data Structure for Visited Relics
 
-> Fill in the table.
-
 | Property | Your answer |
 |---|---|
-| Data structure chosen | |
-| Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected | Time complexity: |
-| Operation: unmark a relic (backtrack) | Time complexity: |
-| Why this structure fits | |
+| Data structure chosen |set|
+| Operation: check if relic already collected | Time complexity: O(1)|
+| Operation: mark a relic as collected | Time complexity: O(1)|
+| Operation: unmark a relic (backtrack) | Time complexity: O(1)|
+| Why this structure fits |I used a set since the search is recurive and needs to be able to remove and add items fast when it trys all different relics|
 
 ### Part 5c: Worst-Case Search Space
 
-> Two bullets.
-
-- **Worst-case number of orders considered:** _Your answer (in terms of k)._
-- **Why:** _One-line justification._
+- **Worst-case number of orders considered:** O(k!) 
+- **Why:** Since there is a k amount of relics, the worst case would be that the serach tries k choices first and then k-1 and then k -2 whihc gives us the factorial number of orders. 
 
 ---
 
@@ -130,29 +123,22 @@ The algorithm hast to explore all different relic visit orders since the total c
 
 ### Part 6a: Best-So-Far Tracking
 
-> Three bullets.
-
-- **What is tracked:** _Your answer here._
-- **When it is used:** _Your answer here._
-- **What it allows the algorithm to skip:** _Your answer here._
+- **What is tracked:** best which tracks the smallest complete route cost found so far and what order got that cost.
+- **When it is used:** It is used inside _explore() before expanding. 
+- **What it allows the algorithm to skip:** when cost_so_far >= best[0]. 
 
 ### Part 6b: Lower Bound Estimation
 
-> Three bullets.
-
-- **What information is available at the current state:** _Your answer here._
-- **What the lower bound accounts for:** _Your answer here._
-- **Why it never overestimates:** _Your answer here._
+- **What information is available at the current state:** at current state the algorithm sees current_loc, relics_remaining, relics_visited_order, cost_so_far, and dist_table.
+- **What the lower bound accounts for:** it accounts for the fuel we already spent which is represented by cost_so_far. 
+- **Why it never overestimates:** it never overestimates since any route that is complete route from the state has to already have the fuel that is already spent and future costs will be nonnegative. 
 
 ### Part 6c: Pruning Correctness
 
-> One to two bullets. Explain why pruning is safe.
-
-- _Your answer here._
+Pruning is safe since when cost_so_far is greater then or equal to the best[0], then the partial route is already at least as expensive as the best complete route found. 
 
 ---
 
 ## References
-
 - Lecture notes
 - geeksforgeeks website

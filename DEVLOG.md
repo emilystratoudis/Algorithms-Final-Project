@@ -28,7 +28,7 @@ _Your entry here._
 
 ---
 
-## Final Entry – [Date]: Time Estimate
+## Final Entry – 5/6/2026: Time Estimate
 
 > Required. Estimate minutes spent per part. Honesty is expected; accuracy is not graded.
 

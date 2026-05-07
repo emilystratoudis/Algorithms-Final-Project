@@ -77,28 +77,18 @@ def run_dijkstra(graph, source):
             if distance[u] + w < distance[v]:
                 distance[v] = distance[u] + w
                 heapq.heappush(pq, (distance[v], v))
-                
+
     return distance
 
 
 def precompute_distances(graph, spawn, relics, exit_node):
-    """
-    Parameters
-    ----------
-    graph : dict[node, list[tuple[node, int]]]
-    spawn : node
-    relics : list[node]
-    exit_node : node
+   
+    distanceTable = {}
 
-    Returns
-    -------
-    dict[node, dict[node, float]]
-        Nested structure supporting dist_table[u][v] lookups
-        for every source u your design requires.
+    for source in select_sources(spawn,relics,exit_node):
+       distanceTable[source] = run_dijkstra(graph, source)
 
-    TODO
-    """
-    pass
+    return distanceTable
 
 
 # =============================================================================

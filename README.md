@@ -168,6 +168,5 @@ _Your answer here._
 
 ## References
 
-> Bullet list. If none beyond lecture notes, write that.
-
-- _Your references here._
+- Lecture notes
+- geeksforgeeks website

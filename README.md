@@ -79,20 +79,16 @@ We need the correct distance from each path becuase that is what the planner use
 
 ### Why Greedy Fails
 
-> State the failure mode. Then give a concrete counter-example using specific node names
-> or costs (you may use the illustration example from the spec). Three to five bullets.
 
-- **The failure mode:** _Your answer here._
-- **Counter-example setup:** _Your answer here._
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+- **The failure mode:** The greedy could choose the closest next relic with least cost but does not consider the entire global cost and the effect that local choice has on that and the rest of the route. 
+- **Counter-example setup:** S to A costs 1 and S to B costs 2 and A to B costs 100 and B to A costs 1 and A to T costs 1 and B to T costs 1.
+- **What greedy picks:** Choose A first because it is shortest path from S.
+- **What optimal picks:** Chooses B first then A and then T.
+- **Why greedy loses:** Greedy looses since it has the path S -> A -> B -> T which has a cost of 102. But optimal chooses S -> B -> A -> T which only has a cost of 4. 
 
 ### What the Algorithm Must Explore
 
-> One bullet. Must use the word "order."
-
-- _Your answer here._
+The algorithm hast to explore all different relic visit orders since the total cost depends on order of how you visit them. 
 
 ---
 

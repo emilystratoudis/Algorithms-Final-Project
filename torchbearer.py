@@ -38,40 +38,47 @@ def explain_problem():
 # =============================================================================
 
 def select_sources(spawn, relics, exit_node):
-    """
-    Parameters
-    ----------
-    spawn : node
-    relics : list[node]
-    exit_node : node
 
-    Returns
-    -------
-    list[node]
-        No duplicates. Order does not matter.
+    seen = {spawn}
+    sources = [spawn]
 
-    TODO
-    """
-    pass
+    for relic in relics:
+        
+        if relic not in seen:
+            seen.add(relic)
+            sources.append(relic)
+
+    return sources
 
 
 def run_dijkstra(graph, source):
-    """
-    Parameters
-    ----------
-    graph : dict[node, list[tuple[node, int]]]
-        graph[u] = [(v, cost), ...]. All costs are nonnegative integers.
-    source : node
+    # using min heap for storing my distances and nodes
+    pq = [(0, source)]
 
-    Returns
-    -------
-    dict[node, float]
-        Minimum cost from source to every node in graph.
-        Unreachable nodes map to float('inf').
+    # collecting all the nodes and initalizing the disatnces to infinity
+    nodes = set(graph.keys())
+    for node in graph:
+        for vertex, cost in graph[node]:
+            nodes.add(vertex)
 
-    TODO
-    """
-    pass
+    distance = {node: float("inf") for node in nodes}
+    distance[source] = 0
+
+    while pq:
+        d, u = heapq.heappop(pq)
+
+        # if not the lastets shortest distance skip
+        if d > distance[u]:
+            continue
+
+        #explore others of the current
+        for v, w in graph.get(u, []):
+            #update if shorter path to v through u is found
+            if distance[u] + w < distance[v]:
+                distance[v] = distance[u] + w
+                heapq.heappush(pq, (distance[v], v))
+                
+    return distance
 
 
 def precompute_distances(graph, spawn, relics, exit_node):

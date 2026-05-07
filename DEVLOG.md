@@ -12,12 +12,9 @@ So first I will try to implement the Dijkstra's algoirthm since it is kind of wh
 
 ---
 
-## Entry 2 – [Date]: [Short description]
+## Entry 2 – 5/6/2026: [Short description]
 
-> Required. At least one entry must describe a bug, wrong assumption, or design change
-> you encountered. Describe what went wrong and how you resolved it.
-
-_Your entry here._
+I forgot to skip unreachable paths with infinity.
 
 ---
 

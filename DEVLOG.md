@@ -18,11 +18,6 @@ I forgot to skip unreachable paths with infinity.
 
 ---
 
-## Entry 3 – [Date]: [Short description]
-
-_Your entry here._
-
----
 
 ## Entry 4 – [Date]: Post-Implementation Reflection
 
@@ -40,7 +35,7 @@ _Your entry here._
 | Part | Estimated Hours |
 |---|---|
 | Part 1: Problem Analysis |0.5|
-| Part 2: Precomputation Design | |
+| Part 2: Precomputation Design |0.75|
 | Part 3: Algorithm Correctness | |
 | Part 4: Search Design | |
 | Part 5: State and Search Space | |

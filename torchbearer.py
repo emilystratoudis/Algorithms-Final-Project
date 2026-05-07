@@ -96,16 +96,16 @@ def precompute_distances(graph, spawn, relics, exit_node):
 # =============================================================================
 
 def dijkstra_invariant_check():
-    """
-    Returns
-    -------
-    str
-        Your Part 3 README answers, written as a string.
-        Must match what you wrote in README Part 3.
+   
+    return """
+-For nodes already finalized (in S): At the start of each iteration of the loop every finalized node actaully has the shortest path distance from the source.
+-For nodes not yet finalized (not in S): At the start of each iteration of the loop every non finalized node stores the minumum distamce that we know so far based on the nodes that already have been finalized.
+-Initialization : why the invariant holds before iteration 1: Before the first loop iteration, distance[source] = 0 and every other disatnce is infinity. This proves the invariant since the source has a path that has zero cost itself and no other paths have been discovered yet so it is the shortest ath distance from source at that moment.
+-Maintenance : why finalizing the min-dist node is always correct: Assuming the invariant holds at the strat of the loop and the queue chooses the unfinalized node with the smallest distance. When that node then gets finialized, nonnegative edge weights would guarentee that any path after through another unfinalized node only can add cost the the finalized disatnce can't become smaller. And relaxing the outgoing edges update the best discovered path for all other non finalized edges so the invariant P still hold true.
+-Termination : what the invariant guarantees when the algorithm ends: When the loop terminates there are no more nodes left to improve. It uses the invariant at exit and every finalized node has its true shortest path disatnce from the source and any unreachable nodes stay infinite.
+-We need the correct distance from each path becuase that is what the planner uses to plan the final lowest cost route so if they are wrong the whole route could be incorrect.
 
-    TODO
-    """
-    return "TODO"
+"""
 
 
 # =============================================================================

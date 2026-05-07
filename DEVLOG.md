@@ -36,8 +36,8 @@ _Your entry here._
 |---|---|
 | Part 1: Problem Analysis |0.5|
 | Part 2: Precomputation Design |0.75|
-| Part 3: Algorithm Correctness | |
-| Part 4: Search Design | |
+| Part 3: Algorithm Correctness |0.75|
+| Part 4: Search Design |0.5|
 | Part 5: State and Search Space | |
 | Part 6: Pruning | |
 | Part 7: Implementation | |

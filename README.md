@@ -8,17 +8,14 @@
 
 ## Part 1: Problem Analysis
 
-> Document why this problem is not just a shortest-path problem. Three bullet points, one
-> per question. Each bullet should be 1-2 sentences max.
-
 - **Why a single shortest-path run from S is not enough:**
-  _Your answer here._
+  A single shortest path run from s is not enough because that only tells us the cheapest distance from each location to S but for this problem we need the shortest path in the best order of all the relics and that we can not find from just doing the single run from S to each part. 
 
 - **What decision remains after all inter-location costs are known:**
-  _Your answer here._
+  After all the inter location costs are known we just need to knwo th ebest order to visit them in before we reach the end of our path. 
 
 - **Why this requires a search over orders (one sentence):**
-  _Your answer here._
+  We need to search over many orders because different orders all have diffferent costs and just choosing the shortest path order sometimes will not give us the least cost so we have to try out different ones. 
 
 ---
 

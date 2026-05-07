@@ -23,33 +23,28 @@
 
 ### Part 2a: Source Selection
 
-> List the source node types as a bullet list. For each, one-line reason.
 
 | Source Node Type | Why it is a source |
 |---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| 'spawn' | This is a source because every route starts first at the entrance so first we need to find the shortest path from the spawn to every point |
+| 'relics' | This is a source because after a relic is visited the planner might have to go to another before it exiits so we also need the shortest path from each relic to each other. |
 
 ### Part 2b: Distance Storage
 
-> Fill in the table. No prose required.
-
 | Property | Your answer |
 |---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Data structure name | Nested Dictionary |
+| What the keys represent | The outer key is the source node and the inner key is the destination node |
+| What the values represent | Values are the shortest fuel cost from the source to destination|
+| Lookup time complexity | O(1) for the average case|
+| Why O(1) lookup is possible | It is possible because in python dictonaries use hashing which means a direct key lookup has average O(1) cost |
 
 ### Part 2c: Precomputation Complexity
 
-> State the total complexity and show the arithmetic. Two to three lines max.
-
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+- **Number of Dijkstra runs:** k + 1
+- **Cost per run:** O(m log n)
+- **Total complexity:** O(k + 1) * m log n)
+- **Justification (one line):** Dijkstra runs once from the start and once from each of the relics. Each of these runs costs the system O(m log n) time so for the total it would be (k + 1) since that is the number of times Dikstra runs times each of the runs which cost O(m log n). 
 
 ---
 
